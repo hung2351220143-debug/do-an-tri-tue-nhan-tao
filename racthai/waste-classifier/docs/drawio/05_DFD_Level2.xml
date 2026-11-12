@@ -1,0 +1,41 @@
+<mxfile><diagram name="DFD Level 2 - Phan Loai Rac"><mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0"><root><mxCell id="0"/><mxCell id="1" parent="0"/>
+
+<!-- External Entities -->
+<mxCell id="nd" value="Nguoi Dung" style="rounded=0;fillColor=#dae8fc;strokeColor=#1565C0;fontSize=12;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="40" y="480" width="140" height="60" as="geometry"/></mxCell>
+<mxCell id="gem" value="Google Gemini AI" style="rounded=0;fillColor=#e1d5e7;strokeColor=#6A1B9A;fontSize=12;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="1100" y="480" width="160" height="60" as="geometry"/></mxCell>
+
+<!-- Data Stores -->
+<mxCell id="ds2" value="D2  classifications" style="shape=mxgraph.dfd.dataStore;fillColor=#FFFDE7;strokeColor=#F9A825;fontSize=11;" vertex="1" parent="1"><mxGeometry x="1100" y="280" width="180" height="50" as="geometry"/></mxCell>
+<mxCell id="ds4" value="D4  api_usage" style="shape=mxgraph.dfd.dataStore;fillColor=#FFFDE7;strokeColor=#F9A825;fontSize=11;" vertex="1" parent="1"><mxGeometry x="1100" y="700" width="180" height="50" as="geometry"/></mxCell>
+<mxCell id="ds5" value="D5  /uploads/ File System" style="shape=mxgraph.dfd.dataStore;fillColor=#FFFDE7;strokeColor=#F9A825;fontSize=11;" vertex="1" parent="1"><mxGeometry x="1100" y="100" width="180" height="50" as="geometry"/></mxCell>
+
+<!-- Processes -->
+<mxCell id="p21" value="2.1&#xa;Nhan &amp; Xac nhan file" style="ellipse;fillColor=#ffe6cc;strokeColor=#E65100;fontSize=10;" vertex="1" parent="1"><mxGeometry x="250" y="440" width="130" height="80" as="geometry"/></mxCell>
+<mxCell id="p22" value="2.2&#xa;Luu file&#xa;vao disk" style="ellipse;fillColor=#ffe6cc;strokeColor=#E65100;fontSize=10;" vertex="1" parent="1"><mxGeometry x="450" y="100" width="130" height="80" as="geometry"/></mxCell>
+<mxCell id="p23" value="2.3&#xa;Tinh MD5&#xa;hash anh" style="ellipse;fillColor=#ffe6cc;strokeColor=#E65100;fontSize=10;" vertex="1" parent="1"><mxGeometry x="450" y="280" width="130" height="80" as="geometry"/></mxCell>
+<mxCell id="p24" value="2.4&#xa;Kiem tra&#xa;Cache DB" style="ellipse;fillColor=#ffe6cc;strokeColor=#E65100;fontSize=10;" vertex="1" parent="1"><mxGeometry x="650" y="280" width="130" height="80" as="geometry"/></mxCell>
+<mxCell id="p25" value="2.5&#xa;Goi&#xa;Gemini API" style="ellipse;fillColor=#ffe6cc;strokeColor=#E65100;fontSize=10;" vertex="1" parent="1"><mxGeometry x="850" y="440" width="130" height="80" as="geometry"/></mxCell>
+<mxCell id="p26" value="2.6&#xa;Xu ly &amp;&#xa;Chuan hoa ket qua" style="ellipse;fillColor=#ffe6cc;strokeColor=#E65100;fontSize=10;" vertex="1" parent="1"><mxGeometry x="650" y="600" width="130" height="80" as="geometry"/></mxCell>
+<mxCell id="p27" value="2.7&#xa;Luu ket qua&#xa;vao DB" style="ellipse;fillColor=#ffe6cc;strokeColor=#E65100;fontSize=10;" vertex="1" parent="1"><mxGeometry x="850" y="260" width="130" height="80" as="geometry"/></mxCell>
+<mxCell id="p28" value="2.8&#xa;Ghi log&#xa;API Usage" style="ellipse;fillColor=#ffe6cc;strokeColor=#E65100;fontSize=10;" vertex="1" parent="1"><mxGeometry x="850" y="660" width="130" height="80" as="geometry"/></mxCell>
+<mxCell id="p29" value="2.9&#xa;Tra ket qua&#xa;ve client" style="ellipse;fillColor=#ffe6cc;strokeColor=#E65100;fontSize=10;" vertex="1" parent="1"><mxGeometry x="250" y="700" width="130" height="80" as="geometry"/></mxCell>
+
+<!-- Edges -->
+<mxCell id="e1" value="multipart/form-data" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="nd" target="p21" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e2" value="Validated file" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="p21" target="p22" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="315" y="400"/><mxPoint x="515" y="400"/><mxPoint x="515" y="180"/></Array></mxGeometry></mxCell>
+<mxCell id="e3" value="Duong dan file" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="p22" target="ds5" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e4" value="req.file" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="p22" target="p23" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="515" y="180"/><mxPoint x="515" y="320"/></Array></mxGeometry></mxCell>
+<mxCell id="e5" value="MD5 hash" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="p23" target="p24" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e6" value="SELECT WHERE image_hash" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;endArrow=block;startArrow=block;startFill=0;" edge="1" source="p24" target="ds2" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="780" y="320"/><mxPoint x="1100" y="320"/></Array></mxGeometry></mxCell>
+<mxCell id="e7" value="Cache miss – goi AI" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="p24" target="p25" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="715" y="400"/><mxPoint x="715" y="480"/><mxPoint x="850" y="480"/></Array></mxGeometry></mxCell>
+<mxCell id="e8" value="Cache hit – dung ket qua cu" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;dashed=1;" edge="1" source="p24" target="p27" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="780" y="320"/><mxPoint x="850" y="300"/></Array></mxGeometry></mxCell>
+<mxCell id="e9" value="base64 + prompt" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="p25" target="gem" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e10" value="Raw JSON string" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;dashed=1;" edge="1" source="gem" target="p26" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1100" y="540"/><mxPoint x="780" y="540"/><mxPoint x="780" y="640"/><mxPoint x="780" y="640"/></Array></mxGeometry></mxCell>
+<mxCell id="e11" value="Parsed + enriched JSON" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="p26" target="p27" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="780" y="640"/><mxPoint x="915" y="640"/><mxPoint x="915" y="340"/></Array></mxGeometry></mxCell>
+<mxCell id="e12" value="INSERT classifications" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="p27" target="ds2" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e13" value="Ket qua" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="p27" target="p28" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="915" y="340"/><mxPoint x="915" y="700"/></Array></mxGeometry></mxCell>
+<mxCell id="e14" value="INSERT api_usage" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="p28" target="ds4" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e15" value="classificationId + result" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="p27" target="p29" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="850" y="300"/><mxPoint x="200" y="300"/><mxPoint x="200" y="740"/><mxPoint x="250" y="740"/></Array></mxGeometry></mxCell>
+<mxCell id="e16" value="JSON response" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;dashed=1;" edge="1" source="p29" target="nd" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="250" y="740"/><mxPoint x="110" y="740"/><mxPoint x="110" y="510"/></Array></mxGeometry></mxCell>
+
+</root></mxGraphModel></diagram></mxfile>

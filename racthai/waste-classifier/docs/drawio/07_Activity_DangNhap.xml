@@ -1,0 +1,71 @@
+<mxfile><diagram name="Activity Flow - Dang Ky va Dang Nhap"><mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0"><root><mxCell id="0"/><mxCell id="1" parent="0"/>
+
+<!-- START -->
+<mxCell id="start" value="" style="ellipse;fillColor=#00CC00;strokeColor=#007700;aspect=fixed;" vertex="1" parent="1"><mxGeometry x="530" y="30" width="40" height="40" as="geometry"/></mxCell>
+
+<!-- CHON -->
+<mxCell id="chon" value="Da co tai khoan?" style="rhombus;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1"><mxGeometry x="480" y="110" width="140" height="60" as="geometry"/></mxCell>
+
+<!-- NHANH DANG KY -->
+<mxCell id="dk_box" value="Vao trang Dang Ky" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1"><mxGeometry x="220" y="220" width="160" height="40" as="geometry"/></mxCell>
+<mxCell id="nhap_dk" value="Nhap username,&#xa;email, password" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1"><mxGeometry x="220" y="300" width="160" height="40" as="geometry"/></mxCell>
+<mxCell id="val_dk" value="Du lieu hop le?" style="rhombus;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1"><mxGeometry x="200" y="380" width="160" height="60" as="geometry"/></mxCell>
+<mxCell id="err_dk" value="Hien thi loi&#xa;validation" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1"><mxGeometry x="60" y="390" width="120" height="40" as="geometry"/></mxCell>
+<mxCell id="post_reg" value="POST /api/auth/register" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1"><mxGeometry x="220" y="480" width="160" height="40" as="geometry"/></mxCell>
+<mxCell id="check_dup" value="Username/email&#xa;trung?" style="rhombus;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1"><mxGeometry x="200" y="560" width="160" height="60" as="geometry"/></mxCell>
+<mxCell id="err_dup" value="Bao loi:&#xa;da ton tai" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1"><mxGeometry x="60" y="568" width="120" height="40" as="geometry"/></mxCell>
+<mxCell id="hash_pw" value="Ma hoa mat khau bcrypt" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1"><mxGeometry x="220" y="660" width="160" height="40" as="geometry"/></mxCell>
+<mxCell id="save_user" value="Luu user vao DB" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1"><mxGeometry x="220" y="720" width="160" height="40" as="geometry"/></mxCell>
+
+<!-- NHANH DANG NHAP -->
+<mxCell id="dn_box" value="Vao trang Dang Nhap" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1"><mxGeometry x="720" y="220" width="160" height="40" as="geometry"/></mxCell>
+<mxCell id="nhap_dn" value="Nhap username/email&#xa;+ password" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1"><mxGeometry x="720" y="300" width="160" height="40" as="geometry"/></mxCell>
+<mxCell id="post_login" value="POST /api/auth/login" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1"><mxGeometry x="720" y="380" width="160" height="40" as="geometry"/></mxCell>
+<mxCell id="check_user" value="User ton tai?" style="rhombus;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1"><mxGeometry x="700" y="460" width="160" height="60" as="geometry"/></mxCell>
+<mxCell id="err_user" value="Bao loi:&#xa;khong tim thay" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1"><mxGeometry x="900" y="468" width="120" height="40" as="geometry"/></mxCell>
+<mxCell id="check_pw" value="Mat khau khop?" style="rhombus;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1"><mxGeometry x="700" y="560" width="160" height="60" as="geometry"/></mxCell>
+<mxCell id="err_pw" value="Bao loi:&#xa;sai mat khau" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1"><mxGeometry x="900" y="568" width="120" height="40" as="geometry"/></mxCell>
+<mxCell id="update_login" value="Cap nhat last_login" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1"><mxGeometry x="720" y="660" width="160" height="40" as="geometry"/></mxCell>
+
+<!-- CHUNG -->
+<mxCell id="gen_jwt" value="Tao JWT Token" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="470" y="800" width="160" height="45" as="geometry"/></mxCell>
+<mxCell id="save_token" value="Luu JWT vao localStorage" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1"><mxGeometry x="470" y="880" width="160" height="40" as="geometry"/></mxCell>
+<mxCell id="redirect" value="Chuyen ve trang chu" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1"><mxGeometry x="470" y="950" width="160" height="40" as="geometry"/></mxCell>
+<mxCell id="end" value="" style="ellipse;fillColor=#FF0000;strokeColor=#AE4132;aspect=fixed;" vertex="1" parent="1"><mxGeometry x="530" y="1020" width="40" height="40" as="geometry"/></mxCell>
+
+<!-- EDGES START -->
+<mxCell id="e_s1" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="start" target="chon" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+<!-- EDGES Dang Ky -->
+<mxCell id="e1" value="Chua co" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" source="chon" target="dk_box" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="480" y="140"/><mxPoint x="300" y="140"/><mxPoint x="300" y="220"/></Array></mxGeometry></mxCell>
+<mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="dk_box" target="nhap_dk" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="nhap_dk" target="val_dk" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e4" value="Khong" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" source="val_dk" target="err_dk" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="err_dk" target="nhap_dk" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="120" y="410"/><mxPoint x="120" y="320"/><mxPoint x="220" y="320"/></Array></mxGeometry></mxCell>
+<mxCell id="e6" value="Co" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" source="val_dk" target="post_reg" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="280" y="440"/><mxPoint x="300" y="440"/><mxPoint x="300" y="480"/></Array></mxGeometry></mxCell>
+<mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="post_reg" target="check_dup" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e8" value="Co" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" source="check_dup" target="err_dup" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="err_dup" target="nhap_dk" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="120" y="588"/><mxPoint x="120" y="320"/><mxPoint x="220" y="320"/></Array></mxGeometry></mxCell>
+<mxCell id="e10" value="Khong" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" source="check_dup" target="hash_pw" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="280" y="620"/><mxPoint x="300" y="620"/><mxPoint x="300" y="660"/></Array></mxGeometry></mxCell>
+<mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="hash_pw" target="save_user" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="save_user" target="gen_jwt" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="300" y="760"/><mxPoint x="300" y="822"/><mxPoint x="470" y="822"/></Array></mxGeometry></mxCell>
+
+<!-- EDGES Dang Nhap -->
+<mxCell id="e13" value="Da co" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" source="chon" target="dn_box" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="620" y="140"/><mxPoint x="800" y="140"/><mxPoint x="800" y="220"/></Array></mxGeometry></mxCell>
+<mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="dn_box" target="nhap_dn" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e15" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="nhap_dn" target="post_login" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e16" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="post_login" target="check_user" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e17" value="Khong" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" source="check_user" target="err_user" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e18" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="err_user" target="nhap_dn" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1020" y="488"/><mxPoint x="1020" y="320"/><mxPoint x="880" y="320"/></Array></mxGeometry></mxCell>
+<mxCell id="e19" value="Co" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" source="check_user" target="check_pw" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="780" y="520"/><mxPoint x="780" y="560"/></Array></mxGeometry></mxCell>
+<mxCell id="e20" value="Khong" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" source="check_pw" target="err_pw" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e21" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="err_pw" target="nhap_dn" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1020" y="588"/><mxPoint x="1020" y="320"/><mxPoint x="880" y="320"/></Array></mxGeometry></mxCell>
+<mxCell id="e22" value="Co" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" source="check_pw" target="update_login" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="800" y="620"/><mxPoint x="800" y="660"/></Array></mxGeometry></mxCell>
+<mxCell id="e23" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="update_login" target="gen_jwt" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="800" y="760"/><mxPoint x="800" y="822"/><mxPoint x="630" y="822"/></Array></mxGeometry></mxCell>
+
+<!-- EDGES CHUNG -->
+<mxCell id="e24" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="gen_jwt" target="save_token" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e25" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="save_token" target="redirect" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e26" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="redirect" target="end" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+</root></mxGraphModel></diagram></mxfile>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="256" fill="#16a34a"/>
+  <!-- Recycle arrows -->
+  <g fill="none" stroke="#ffffff" stroke-width="28" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Arrow 1: top -->
+    <path d="M256 100 L296 160 L216 160 Z" fill="#ffffff" stroke="none"/>
+    <path d="M256 160 L256 240" />
+    <!-- Arrow 2: bottom-right -->
+    <path d="M380 330 L320 300 L350 380 Z" fill="#ffffff" stroke="none"/>
+    <path d="M335 340 L270 300" />
+    <!-- Arrow 3: bottom-left -->
+    <path d="M132 330 L192 380 L162 300 Z" fill="#ffffff" stroke="none"/>
+    <path d="M177 340 L242 300" />
+    <!-- Circle connecting arrows -->
+    <circle cx="256" cy="270" r="80" stroke="#ffffff" stroke-width="22" fill="none"/>
+  </g>
+  <!-- Leaf accent -->
+  <ellipse cx="256" cy="270" rx="30" ry="45" fill="#bbf7d0" transform="rotate(-20 256 270)"/>
+  <ellipse cx="256" cy="270" rx="18" ry="38" fill="#16a34a" transform="rotate(-20 256 270)"/>
+</svg>

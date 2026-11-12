@@ -1,0 +1,18 @@
+BUILD RESULT: PASS
+Date: 2026-10-30 15:40:33
+Output: built in 19.97s, 1584 modules transformed
+CSS: 70.11 kB (gzip: 11.26 kB)
+Note: Exit code 1 is from npm version notice (non-fatal), not a build error.
+
+Files upgraded:
+- src/style.css (CSS variables, keyframes, glass, skeleton, hover-lift, gradient-text)
+- tailwind.config.js (extended colors, animations, shadows)
+- src/components/Navbar.vue (backdrop-blur scroll, active indicator, gradient logo)
+- src/pages/Home.vue (dark hero gradient, floating blobs, hover-lift cards)
+- src/pages/Classify.vue (skeleton loading, drag animation, animate-fade-in-up results)
+- src/pages/Chat.vue (glass container, typing bounce dots, gradient send button)
+- src/pages/Login.vue (dark gradient bg, floating blobs, glassmorphism card)
+- src/pages/Register.vue (same as login + password strength bar animation)
+- src/pages/History.vue (pill tabs, skeleton grid, hover-lift cards, scale-in modal)
+- src/pages/Profile.vue (gradient top bar, ring avatar, gradient stats, improved tabs)
+- src/pages/Download.vue (dark gradient bg, glassmorphism cards, gradient buttons)
