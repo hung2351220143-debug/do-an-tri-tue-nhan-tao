@@ -1,0 +1,11 @@
+{
+  "name": "waste-classifier",
+  "version": "1.0.0",
+  "description": "EcoScan - Phân loại rác thải thông minh với AI",
+  "scripts": {
+    "setup": "cd frontend-vue && npm install && cd ../backend && npm install",
+    "build": "cd frontend-vue && npm run build",
+    "start": "cd backend && node server.js",
+    "dev": "cd backend && npx nodemon server.js"
+  }
+}

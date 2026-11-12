@@ -1,0 +1,66 @@
+<mxfile><diagram name="IFD"><mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0"><root><mxCell id="0"/><mxCell id="1" parent="0"/>
+
+<!-- ACTORS -->
+<mxCell id="u1" value="Nguoi dung&#xa;chua dang nhap" style="ellipse;fillColor=#dae8fc;strokeColor=#1565C0;fontSize=11;" vertex="1" parent="1"><mxGeometry x="30" y="80" width="130" height="50" as="geometry"/></mxCell>
+<mxCell id="u2" value="Nguoi dung&#xa;da dang nhap" style="ellipse;fillColor=#dae8fc;strokeColor=#1565C0;fontSize=11;" vertex="1" parent="1"><mxGeometry x="30" y="200" width="130" height="50" as="geometry"/></mxCell>
+<mxCell id="adm" value="Admin" style="ellipse;fillColor=#f8cecc;strokeColor=#880E4F;fontSize=11;" vertex="1" parent="1"><mxGeometry x="30" y="400" width="130" height="50" as="geometry"/></mxCell>
+
+<!-- FRONTEND -->
+<mxCell id="fe1" value="Form Dang Nhap / Dang Ky" style="rounded=1;fillColor=#d5e8d4;strokeColor=#2E7D32;fontSize=11;" vertex="1" parent="1"><mxGeometry x="230" y="60" width="180" height="40" as="geometry"/></mxCell>
+<mxCell id="fe2" value="Trang Phan Loai" style="rounded=1;fillColor=#d5e8d4;strokeColor=#2E7D32;fontSize=11;" vertex="1" parent="1"><mxGeometry x="230" y="150" width="180" height="40" as="geometry"/></mxCell>
+<mxCell id="fe3" value="Trang Chat" style="rounded=1;fillColor=#d5e8d4;strokeColor=#2E7D32;fontSize=11;" vertex="1" parent="1"><mxGeometry x="230" y="250" width="180" height="40" as="geometry"/></mxCell>
+<mxCell id="fe4" value="Trang Lich Su" style="rounded=1;fillColor=#d5e8d4;strokeColor=#2E7D32;fontSize=11;" vertex="1" parent="1"><mxGeometry x="230" y="340" width="180" height="40" as="geometry"/></mxCell>
+<mxCell id="fe5" value="Admin Dashboard" style="rounded=1;fillColor=#d5e8d4;strokeColor=#2E7D32;fontSize=11;" vertex="1" parent="1"><mxGeometry x="230" y="430" width="180" height="40" as="geometry"/></mxCell>
+
+<!-- BACKEND APIs -->
+<mxCell id="api1" value="/api/auth" style="rounded=1;fillColor=#ffe6cc;strokeColor=#E65100;fontSize=11;" vertex="1" parent="1"><mxGeometry x="490" y="60" width="160" height="40" as="geometry"/></mxCell>
+<mxCell id="api2" value="/api/classify" style="rounded=1;fillColor=#ffe6cc;strokeColor=#E65100;fontSize=11;" vertex="1" parent="1"><mxGeometry x="490" y="150" width="160" height="40" as="geometry"/></mxCell>
+<mxCell id="api3" value="/api/chat" style="rounded=1;fillColor=#ffe6cc;strokeColor=#E65100;fontSize=11;" vertex="1" parent="1"><mxGeometry x="490" y="250" width="160" height="40" as="geometry"/></mxCell>
+<mxCell id="api4" value="/api/history" style="rounded=1;fillColor=#ffe6cc;strokeColor=#E65100;fontSize=11;" vertex="1" parent="1"><mxGeometry x="490" y="340" width="160" height="40" as="geometry"/></mxCell>
+<mxCell id="api5" value="/api/admin" style="rounded=1;fillColor=#ffe6cc;strokeColor=#E65100;fontSize=11;" vertex="1" parent="1"><mxGeometry x="490" y="430" width="160" height="40" as="geometry"/></mxCell>
+<mxCell id="mw1" value="JWT Middleware" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1"><mxGeometry x="490" y="520" width="160" height="40" as="geometry"/></mxCell>
+<mxCell id="mw2" value="Multer Upload" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1"><mxGeometry x="490" y="570" width="160" height="40" as="geometry"/></mxCell>
+
+<!-- EXTERNAL -->
+<mxCell id="gm" value="Google Gemini AI" style="rounded=1;fillColor=#e1d5e7;strokeColor=#6A1B9A;fontSize=11;" vertex="1" parent="1"><mxGeometry x="730" y="190" width="160" height="50" as="geometry"/></mxCell>
+
+<!-- STORAGE -->
+<mxCell id="db" value="MySQL&#xa;waste_classifier" style="shape=cylinder3;fillColor=#f8cecc;strokeColor=#880E4F;fontSize=11;" vertex="1" parent="1"><mxGeometry x="730" y="60" width="120" height="60" as="geometry"/></mxCell>
+<mxCell id="fs" value="File System&#xa;/uploads/" style="shape=cylinder3;fillColor=#ffe6cc;strokeColor=#E65100;fontSize=11;" vertex="1" parent="1"><mxGeometry x="730" y="340" width="120" height="60" as="geometry"/></mxCell>
+<mxCell id="mem" value="In-Memory&#xa;Cache Map" style="shape=cylinder3;fillColor=#d5f5e3;strokeColor=#006064;fontSize=11;" vertex="1" parent="1"><mxGeometry x="730" y="450" width="120" height="60" as="geometry"/></mxCell>
+
+<!-- EDGES Auth -->
+<mxCell id="ea1" value="username, email, password" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="u1" target="fe1" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="ea2" value="POST {username,email,password}" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="fe1" target="api1" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="ea3" value="SELECT/INSERT users" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="api1" target="db" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="ea4" value="JWT Token + user info" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;dashed=1;" edge="1" source="api1" target="fe1" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+<!-- EDGES Classify -->
+<mxCell id="ec1" value="File anh" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="u2" target="fe2" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="ec2" value="multipart/form-data" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="fe2" target="mw2" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="ec3" value="File luu vao disk" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="mw2" target="fs" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="ec4" value="req.file" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="mw2" target="api2" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="ec5" value="base64 anh + prompt" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="api2" target="gm" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="ec6" value="JSON phan loai" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;dashed=1;" edge="1" source="gm" target="api2" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="ec7" value="INSERT classifications" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="api2" target="db" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="ec8" value="Ket qua phan loai JSON" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;dashed=1;" edge="1" source="api2" target="fe2" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+<!-- EDGES Chat -->
+<mxCell id="ech1" value="Tin nhan van ban" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="u2" target="fe3" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="ech2" value="POST {message, history[]}" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="fe3" target="api3" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="ech3" value="message + lich su" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="api3" target="gm" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="ech4" value="Text phan hoi" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;dashed=1;" edge="1" source="gm" target="api3" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="ech5" value="INSERT chat_history" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="api3" target="db" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+<!-- EDGES History -->
+<mxCell id="eh1" value="GET /api/history + JWT" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="fe4" target="mw1" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="eh2" value="Xac thuc token" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="mw1" target="api4" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="eh3" value="SELECT WHERE user_id" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="api4" target="db" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+<!-- EDGES Admin -->
+<mxCell id="ead1" value="GET /api/admin/* + JWT" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="adm" target="fe5" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="ead2" value="Xac thuc role=admin" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="fe5" target="mw1" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="ead3" value="Xac thuc xong" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="mw1" target="api5" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="ead4" value="SELECT aggregate" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" source="api5" target="db" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+</root></mxGraphModel></diagram></mxfile>
